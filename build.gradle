@@ -16,9 +16,6 @@ dependencies {
     //csv formatter
     compile('com.fasterxml.jackson.dataformat:jackson-dataformat-csv:2.9.3')
 
-    //spark
-    compile 'org.apache.spark:spark-core_2.11:2.2.1'
-    compile 'org.json:json:20171018'
 
 
 }
