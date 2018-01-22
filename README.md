@@ -1,12 +1,15 @@
 # open-data
-This is an experimental API for http://data.gov.ph
+  This is an experimental API for http://data.gov.ph
 
 
 Spring Boot
-compile("org.springframework.boot:spring-boot-starter-web:2.0.0.M7")
+
+  compile("org.springframework.boot:spring-boot-starter-web:2.0.0.M7")
 
 HTTP client OkHTTP3
-compile ('com.squareup.okhttp3:okhttp:3.9.1')
+
+  compile ('com.squareup.okhttp3:okhttp:3.9.1')
 
 CSV formatter
-compile('com.fasterxml.jackson.dataformat:jackson-dataformat-csv:2.9.3')
+
+  compile('com.fasterxml.jackson.dataformat:jackson-dataformat-csv:2.9.3')
