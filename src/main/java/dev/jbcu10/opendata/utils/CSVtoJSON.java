@@ -9,7 +9,9 @@ import java.io.IOException;
  import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+
 @Service
+
 public class CSVtoJSON {
      public  List< Map<String,String>> convert(String string) throws IOException {
         CsvMapper mapper = new CsvMapper();
@@ -18,8 +20,11 @@ public class CSVtoJSON {
                 .with(schema)
                 .readValues(string);
         List< Map<String,String>> mapList = new LinkedList<>();
+
          while (it.hasNext()) {
-            mapList.add(it.next());
+     //        System.out.println("["+it.next().get("date")+",'"+it.next().get("name_of_market")+"','"+it.next().get("comodity")+"',"+it.next().get("price/kg.")+"],");
+
+             mapList.add(it.next());
         }
         return mapList;
     }

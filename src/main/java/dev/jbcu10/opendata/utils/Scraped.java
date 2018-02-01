@@ -22,8 +22,6 @@ public class Scraped {
         try {
 
             List<String> stream = Files.readAllLines(Paths.get(resource.getURL().getPath()));
-
-
             stream.forEach(string-> {
                 String[] sourceArray = string.split(",");
                 String[] srcArray =sourceArray[1].split("/");
