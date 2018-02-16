@@ -10,12 +10,12 @@ import okhttp3.Response;
 import org.springframework.http.ResponseEntity;
  import org.springframework.web.bind.annotation.*;
  import reactor.core.publisher.Flux;
+ import reactor.core.publisher.Mono;
 
  import java.io.IOException;
- import java.util.LinkedList;
- import java.util.List;
- import java.util.Map;
+ import java.util.*;
  import java.util.logging.Logger;
+ import java.util.stream.Collectors;
 
 
 @RestController
@@ -83,6 +83,23 @@ public class SocietyResource {
 
         }
             return null;
+
+     }
+     @GetMapping(value = "/commodity" ,produces = "application/json")
+    @ResponseBody
+    public Mono<Set> getCommoditiesWithoutSimilar() throws IOException{
+              Set<String> strings = new HashSet<>();
+             List<Commodity> commodities  = commodityRepository.findAll().collectList().block();
+             commodities.forEach(commodity -> {
+                 String []name = commodity.getName().split(",");
+                 String finalName = name[0].toLowerCase().replace("medium","").replace(" meduim.","").replace("unripe","");
+                 strings.add(finalName);
+             });
+
+           return   Mono.just(strings);
+
+
+
 
      }
 

@@ -1,11 +1,13 @@
 package dev.jbcu10.opendata.domain;
 
+ import org.springframework.cache.annotation.Cacheable;
  import org.springframework.data.annotation.Id;
  import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.io.Serializable;
 
 @Document(collection = "product")
+@Cacheable
 public class Commodity implements Serializable {
 
     @Id
