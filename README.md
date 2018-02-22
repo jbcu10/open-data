@@ -1,5 +1,5 @@
 # open-data
-  This is an experimental API for Market Prices of Agricultural Commodities from http://data.gov.ph
+  This is an experimental API for Market Prices of Agricultural Commodities in Philippines from http://data.gov.ph
 
 
 Spring Boot
